@@ -107,46 +107,44 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Bitmap压缩策略" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/21/hello-world/" target="_blank">Hello World</a>
+      <a class="article-title" href="/2018/03/31/Bitmap压缩策略/" target="_blank">Bitmap压缩策略</a>
     </h1>
   
 
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/android/">android</a>
+                  
+              </span>
           
       </header>
     
     <div class="article-entry " itemprop="articleBody">
       
-            
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-            <div class="post-copyright">
-    <div class="content">
-        <p>最后更新： 2019年04月21日 13:06</p>
-        <p>原始链接： <a class="post-url" href="/2019/04/21/hello-world/" title="Hello World">http://www.sunny8519.top/2019/04/21/hello-world/</a></p>
-        <footer>
-            <a href="http://www.sunny8519.top">
-                <img src="/images/logo.png" alt="Sunny">
-                Sunny
+        <div class="article-img">
+            <a href="/2018/03/31/Bitmap压缩策略/" target="_blank">
+                
+                <img src="https://upload-images.jianshu.io/upload_images/5231076-c573b3176fab0f29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Bitmap压缩策略" title="Bitmap压缩策略">
+                
             </a>
-        </footer>
-    </div>
-</div>
-
+        </div>
+        <div class="article-feed">
+            <p>
+                
+1.Bitmap高效加载的核心思想原因：Bitmap不能高效加载的原因是由于内存浪费可能导致的OOM。如果我们使用ImageView来显示图片，ImageView的大小没有原始图片那么大，此时把原图加载进内存就有相当一部分内存被浪费，如果图片比较多或者图片占用的内存没有得到及时释放，就会导致OOM。
+解决方案：按一定的采样率将图片缩小后再加载进内存。
+2.加载Bitma...
+            </p>
+        </div>
       
         
     </div>
@@ -154,12 +152,584 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2019-04-21</li>
+                <li><i class="fa fa-calendar"></i>2018-03-31</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/android/" class="color3">android</a>
+      
+    <a href="/tags/Bitmap/" class="color2">Bitmap</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2019/04/21/hello-world/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+            <a href="/2018/03/31/Bitmap压缩策略/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Java UML类图关系说明" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/30/Java UML类图关系说明/" target="_blank">Java UML类图关系说明</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/Java基础/">Java基础</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/03/30/Java UML类图关系说明/" target="_blank">
+                
+                <img src="https://upload-images.jianshu.io/upload_images/5231076-4e389e75f56a24fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Java UML类图关系说明" title="Java UML类图关系说明">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                1.概览类与类之间大体分为五种关系，分别为依赖关系，关联关系，聚合关系，组合关系以及继承关系。
+
+2. 依赖关系依赖关系是单向的，表示一个类依赖于另一个类的定义，是“use a”的关系，如果A依赖于B，则B表现为A的局部变量，方法参数，静态方法调用等。
+1234567891011121314public class Person&#123;  public void do...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-03-30</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Java继承/" class="color2">Java继承</a>
+      
+    <a href="/tags/UML/" class="color4">UML</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/03/30/Java UML类图关系说明/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Java包装类总结(上)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/23/Java包装类总结(上)/" target="_blank">Java包装类总结（上）</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/Java基础/">Java基础</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/01/23/Java包装类总结(上)/" target="_blank">
+                
+                <img src="http://upload-images.jianshu.io/upload_images/5231076-4fbe8e6ba40c6240.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Java包装类总结（上）" title="Java包装类总结（上）">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                
+一.包装类简介Java中的基本数据类型都有其对应的包装类，包装类中一般包括基本数据类型的变量，静态方法，静态变量以及实例方法等，提供了对基本数据类型的各种操作。Java中基本数据类型对应的包装类如下：
+
+
+
+基本数据类型
+包装类
+
+
+
+
+byte
+Byte
+
+
+short
+Short
+
+
+int
+Integer
+
+
+long
+Long
+
+
+float
+Float
+
+
+d...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-01-23</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Java基础/" class="color2">Java基础</a>
+      
+    <a href="/tags/包装类/" class="color4">包装类</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/01/23/Java包装类总结(上)/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Java异常" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/20/Java异常/" target="_blank">Java异常</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/Java基础/">Java基础</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/01/20/Java异常/" target="_blank">
+                
+                <img src="http://upload-images.jianshu.io/upload_images/5231076-382f3d5351c2e6a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Java异常" title="Java异常">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                一.异常的分类Java中的异常基类为Throwable，Error和Exception都继承自Throwable。
+Error是指系统错误或者资源耗尽，通常这些Error都是来自虚拟机，比较常见的Error有内存溢出错误(OutOfMemoryError)，栈溢出错误(StackOverflowError)。
+Exception是指代码异常，如果代码中抛出了这种异常就说明...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-01-20</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/Java异常/" class="color2">Java异常</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/01/20/Java异常/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-AutoCompleteTextView和MultiAutoCompleteTextView的简单用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/17/AutoCompleteTextView和MultiAutoCompleteTextView的简单用法/" target="_blank">AutoCompleteTextView和MultiAutoCompleteTextView的简单用法</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/AutoCompleteTextView/">AutoCompleteTextView</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/01/17/AutoCompleteTextView和MultiAutoCompleteTextView的简单用法/" target="_blank">
+                
+                <img src="http://upload-images.jianshu.io/upload_images/5231076-cca20551d7c949e4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AutoCompleteTextView和MultiAutoCompleteTextView的简单用法" title="AutoCompleteTextView和MultiAutoCompleteTextView的简单用法">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                
+1.AutoCompleteTextView的基本用法1234567891011121314//待匹配的字符串private String[] res = new String[]&#123;"shanghai1", "shanghai2", "beijing1", "beijing2", "tianjin"&#125;;//创建适配器ArrayAdapter adap...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-01-17</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/AutoCompleteTextView/" class="color1">AutoCompleteTextView</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/01/17/AutoCompleteTextView和MultiAutoCompleteTextView的简单用法/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-ArrayList浅析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/02/ArrayList浅析/" target="_blank">ArrayList浅析</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/Java基础/">Java基础</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2017/07/02/ArrayList浅析/" target="_blank">
+                
+                <img src="https://upload-images.jianshu.io/upload_images/5231076-94c9e05f6757e5aa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ArrayList浅析" title="ArrayList浅析">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                
+一.前言怎么说，ArrayList的源码还是相对简单的，数据结构也不是特别复杂，那我们直接上代码分析，先从一个简单的应用开始讲起…注：本文的源码为JDK1.8
+二.ArrayList的初始化ArrayList可以说是我们平常开发遇见的最多的一种集合类了，一般，我们都会这么使用：1234List&lt;Person&gt; persons = new ArrayList&...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2017-07-02</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Java基础/" class="color2">Java基础</a>
+      
+    <a href="/tags/ArrayList源码/" class="color2">ArrayList源码</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2017/07/02/ArrayList浅析/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-String类和StringBuilder类简单分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/25/String类和StringBuilder类简单分析/" target="_blank">String类和StringBuilder类简单分析</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/Java基础/">Java基础</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2017/06/25/String类和StringBuilder类简单分析/" target="_blank">
+                
+                <img src="https://upload-images.jianshu.io/upload_images/5231076-427ae3543d494163.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="String类和StringBuilder类简单分析" title="String类和StringBuilder类简单分析">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                
+一.String类简单分析1.常用方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374//支持+和+=运算符String name = "Su...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2017-06-25</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Java基础/" class="color2">Java基础</a>
+      
+    <a href="/tags/String类/" class="color3">String类</a>
+      
+    <a href="/tags/StringBuilder类/" class="color5">StringBuilder类</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2017/06/25/String类和StringBuilder类简单分析/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Java深拷贝和浅拷贝浅析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/18/Java深拷贝和浅拷贝浅析/" target="_blank">Java深拷贝和浅拷贝浅析</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/Java基础/">Java基础</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2017/06/18/Java深拷贝和浅拷贝浅析/" target="_blank">
+                
+                <img src="https://upload-images.jianshu.io/upload_images/5231076-b8e5d2b7a4968535.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Java深拷贝和浅拷贝浅析" title="Java深拷贝和浅拷贝浅析">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                
+一.Java语言创建对象的的三种方式在Java中创建对象共有三种方式：
+
+new关键字
+clone一个对象
+反射
+
+clone一个对象的第一步是分配和原对象大小一样的内存空间，然后再调用clone方法在这个内存中创建新的对象。
+二.对象的拷贝对象的拷贝必须要实现Cloneable接口，然后覆写Object类中的clone方法，这是在Object类的clone方法中要求的...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2017-06-18</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Java基础/" class="color2">Java基础</a>
+      
+    <a href="/tags/深拷贝/" class="color4">深拷贝</a>
+      
+    <a href="/tags/浅拷贝/" class="color4">浅拷贝</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2017/06/18/Java深拷贝和浅拷贝浅析/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Hexo+Github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/17/Hexo+Github/" target="_blank">Hexo+Github搭建个人博客</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/Hexo/">Hexo</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2017/02/17/Hexo+Github/" target="_blank">
+                
+                <img src="http://upload-images.jianshu.io/upload_images/5231076-3385be91b57dabf4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hexo+Github搭建个人博客" title="Hexo+Github搭建个人博客">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                
+安装Node.jsWindows下安装Node.js还是比较简单的，直接去官网下载安装即可，不需要任何其他的配置。
+安装Git根据自己电脑的参数去Git官网下载安装对应的版本即可，安装完成之后，在cmd命令窗下输入git version，有输出Git版本号则说明安装成功。
+配置SSH Key在桌面右键打开Git Bash，输入下面命令：12$ cd ~/.ssh$ ls...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2017-02-17</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Hexo/" class="color5">Hexo</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2017/02/17/Hexo+Github/#more" class="article-more-link" target="_blank">more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -221,10 +791,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            
+            <a class="category-link" href="/categories/AutoCompleteTextView/">AutoCompleteTextView</a><a class="category-link" href="/categories/Hexo/">Hexo</a><a class="category-link" href="/categories/Java基础/">Java基础</a><a class="category-link" href="/categories/android/">android</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -257,7 +827,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
         </div>
     </div>
 </div>

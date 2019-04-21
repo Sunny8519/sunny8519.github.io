@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Hexo+Github搭建个人博客 | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Android技术博客,Android,个人博客">
+  
+  <meta name="description" content="安装Node.jsWindows下安装Node.js还是比较简单的，直接去官网下载安装即可，不需要任何其他的配置。 安装Git根据自己电脑的参数去Git官网下载安装对应的版本即可，安装完成之后，在cmd命令窗下输入git version，有输出Git版本号则说明安装成功。 配置SSH Key在桌面右键打开Git Bash，输入下面命令：12$ cd ~/.ssh$ ls #检查本机是否有已存在密">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Github搭建个人博客">
+<meta property="og:url" content="http://www.sunny8519.top/2017/02/17/Hexo+Github/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="安装Node.jsWindows下安装Node.js还是比较简单的，直接去官网下载安装即可，不需要任何其他的配置。 安装Git根据自己电脑的参数去Git官网下载安装对应的版本即可，安装完成之后，在cmd命令窗下输入git version，有输出Git版本号则说明安装成功。 配置SSH Key在桌面右键打开Git Bash，输入下面命令：12$ cd ~/.ssh$ ls #检查本机是否有已存在密">
+<meta property="og:locale" content="CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5231076-3385be91b57dabf4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5231076-030e31bb8eb87f76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5231076-ac97e20ff02f2365.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-04-21T04:39:02.340Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo+Github搭建个人博客">
+<meta name="twitter:description" content="安装Node.jsWindows下安装Node.js还是比较简单的，直接去官网下载安装即可，不需要任何其他的配置。 安装Git根据自己电脑的参数去Git官网下载安装对应的版本即可，安装完成之后，在cmd命令窗下输入git version，有输出Git版本号则说明安装成功。 配置SSH Key在桌面右键打开Git Bash，输入下面命令：12$ cd ~/.ssh$ ls #检查本机是否有已存在密">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5231076-3385be91b57dabf4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+  
+    <link rel="icon" href="/logo.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Sunny&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Sunny&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Android技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Sunny" target="_blank" href="//www.sunny8519.top">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Sunny8519">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5492265182/home?wvr=5">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Hexo+Github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Hexo+Github搭建个人博客
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Hexo/">Hexo</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-02-17
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p><img src="http://upload-images.jianshu.io/upload_images/5231076-3385be91b57dabf4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="header.png"></p>
+<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>Windows下安装Node.js还是比较简单的，直接去<a href="https://nodejs.org/en/" title="官网下载" target="_blank" rel="noopener">官网下载</a>安装即可，不需要任何其他的配置。</p>
+<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><p>根据自己电脑的参数去<a href="https://git-scm.com/download/win" title="Git官网" target="_blank" rel="noopener">Git官网</a>下载安装对应的版本即可，安装完成之后，在cmd命令窗下输入<code>git version</code>，有输出Git版本号则说明安装成功。</p>
+<p><strong>配置SSH Key</strong><br>在桌面右键打开Git Bash，输入下面命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ls #检查本机是否有已存在密钥</span><br></pre></td></tr></table></figure></p>
+<p>如果是第一次使用Git，估计是没有配置过SSH密钥，具体判断有没有配置密钥的依据是执行上面命令后有没有打印出.pub为后缀的文，有.pub为后缀的文件则说明之前配置过SSH密钥，那么我们接下来应该看看这个密钥有没有在Github上添加过，如果添加过就不用再添加了。没有.pub为后缀的文件则说明本地没有配置过SSH密钥，需要按照下面的步骤进行配置：</p>
+<p>生成密钥(一个客户端只能有一个密钥）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure></p>
+<p>输入上面命令回车之后第一句提示是让你修改保存密钥的文件名，可以不用管，直接回车，接下来的提示是让你设置密码，如果设置了，以后每次从本地往Github上部署的时候会提示输入密码才能部署，这样的话有更好的安全性，当然了，你也可以不设置，直接回车跳过。</p>
+<p>等待密钥生成完后，输入下面两条命令就会看到.pub后缀的文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ls</span><br><span class="line">id_rsa  id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>我们复制<code>id_rsa.pub</code>这个文件(或者直接拷贝里面的内容)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>把这个密钥配置到Github上。</p>
+<p>测试密钥是否配置成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>成功会有如下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi Sunny8519! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
+<p>如果失败，出现类似如下提示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (13.229.188.59)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)? y</span></span><br><span class="line"><span class="string">Please type '</span>yes<span class="string">' or '</span>no<span class="string">': yes</span></span><br><span class="line"><span class="string">Warning: Permanently added '</span>github.com,<span class="number">13.229</span>.188.59<span class="string">' (RSA) to the list of known hosts.</span></span><br><span class="line"><span class="string">git@github.com: Permission denied (publickey).</span></span><br></pre></td></tr></table></figure></p>
+<p>我们还需要执行如下命令：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
+<p>把公钥添加到本地ssh环境，这样再执行一遍<code>ssh -T git@github.com</code>应该就可以了，bingo!!</p>
+<h4 id="安装和初始化Hexo"><a href="#安装和初始化Hexo" class="headerlink" title="安装和初始化Hexo"></a>安装和初始化Hexo</h4><p>第一步：<br>全局安装Hexo:<code>npm install -g hexo</code></p>
+<p>第二步：<br>创建文件夹（比如我的是D盘下的Hexo文件夹）；<br>在Hexo文件夹下，右键运行Git Bash，输入命令：<code>hexo init</code></p>
+<p>到这儿，本地最简单的Hexo就搭建完了，然后我们在本地测试一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>打开浏览器输入<code>localhost:4000</code>，回车就能看到我们本地的博客界面了。</p>
+<p>第三步：<br>当看到我们的博客界面时发现不是特别的美观，那么我们可以<a href="https://hexo.io/themes/" title="下载" target="_blank" rel="noopener">下载</a>自己喜欢的主题(这块的主题一般是进入到发布者的Github上去看具体的下载和设置方式，这里不详细表述)。<br>这里举一个我用的主题的例子，在前面创建的Hexo文件夹下右键打开Git Bash输入下面这条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure></p>
+<p>这里附上该主题的<a href="https://github.com/litten/hexo-theme-yilia" title="Github地址" target="_blank" rel="noopener">Github地址</a><br>下载完这个主题之后，我们需要修改<code>_config.yml</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: yilia</span><br></pre></td></tr></table></figure></p>
+<p>保存之后，再输入下面两条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>打开浏览器输入<code>localhost:4000</code>就能看到我们新设置的主题了，接下来主题功能的具体配置可以到发布者的Github上详细了解。</p>
+<p>到这里，本地博客的搭建就基本完毕了，接下来就是要把我们的博客部署到Github上。</p>
+<p>第一步：在Github上建立如下仓库：<br><img src="http://upload-images.jianshu.io/upload_images/5231076-030e31bb8eb87f76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="建立仓库"><br>但是要注意的是仓库的名称由你的Github用户名+github+io组成，如图中所示，因为这个名称就是你博客搭建完毕后访问的首页地址（图中报红是因为我已经搭建了这个仓库）。</p>
+<p>第二步：仓库创建完之后，我们需要把仓库的地址设置到Hexo文件夹下的<code>_config.yml</code>文件中，如图所示：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/5231076-ac97e20ff02f2365.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="copy_address.png"></p>
+<p>把地址按照如下方式设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Sunny8519/sunny8519.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>保存好了之后，我们在Hexo文件夹下右键打开Git Bash命令窗口，安装hexo-deployer-git自动部署发布工具：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git  --save</span><br></pre></td></tr></table></figure></p>
+<p>到这儿所有工作都准备好了，我们继续在命令窗口中输入如下三条命令就能把本地博客系统部署到Github上了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<p>然后打开浏览器输入你的<code>Github用户名.github.io</code>就能够访问你的博客首页了。</p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://www.jianshu.com/p/189fd945f38f" target="_blank" rel="noopener">搭建个人博客-hexo+github详细完整步骤</a></p>
+<p><a href="https://blog.minhow.com/2017/08/01/blog/installation-configuration/" target="_blank" rel="noopener">MiHo-主题安装和配置详情</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年04月21日 12:39</p>
+        <p>原始链接： <a class="post-url" href="/2017/02/17/Hexo+Github/" title="Hexo+Github搭建个人博客">http://www.sunny8519.top/2017/02/17/Hexo+Github/</a></p>
+        <footer>
+            <a href="http://www.sunny8519.top">
+                <img src="/images/logo.png" alt="Sunny">
+                Sunny
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.sunny8519.top/2017/02/17/Hexo+Github/&title=《Hexo+Github搭建个人博客》 — Sunny's Blog&pic=http://upload-images.jianshu.io/upload_images/5231076-3385be91b57dabf4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.sunny8519.top/2017/02/17/Hexo+Github/&title=《Hexo+Github搭建个人博客》 — Sunny's Blog&source=Android技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.sunny8519.top/2017/02/17/Hexo+Github/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo+Github搭建个人博客》 — Sunny's Blog&url=http://www.sunny8519.top/2017/02/17/Hexo+Github/&via=http://www.sunny8519.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.sunny8519.top/2017/02/17/Hexo+Github/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.sunny8519.top/2017/02/17/Hexo+Github/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Hexo/" class="color5">Hexo</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Node-js"><span class="post-toc-text">安装Node.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Git"><span class="post-toc-text">安装Git</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装和初始化Hexo"><span class="post-toc-text">安装和初始化Hexo</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#参考"><span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/06/18/Java深拷贝和浅拷贝浅析/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Java深拷贝和浅拷贝浅析
+        
+      </span>
+    </a>
+  
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Sunny<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://www.sunny8519.top",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/AutoCompleteTextView/">AutoCompleteTextView</a><a class="category-link" href="/categories/Hexo/">Hexo</a><a class="category-link" href="/categories/Java基础/">Java基础</a><a class="category-link" href="/categories/android/">android</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

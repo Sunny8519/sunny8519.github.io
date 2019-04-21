@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>String类和StringBuilder类简单分析 | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Android技术博客,Android,个人博客">
+  
+  <meta name="description" content="一.String类简单分析1.常用方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374//支持+和+=运算符String name = &quot;Sunny&quot;;String d">
+<meta name="keywords" content="Java基础,String类,StringBuilder类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String类和StringBuilder类简单分析">
+<meta property="og:url" content="http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="一.String类简单分析1.常用方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374//支持+和+=运算符String name = &quot;Sunny&quot;;String d">
+<meta property="og:locale" content="CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5231076-427ae3543d494163.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-04-21T02:19:17.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="String类和StringBuilder类简单分析">
+<meta name="twitter:description" content="一.String类简单分析1.常用方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374//支持+和+=运算符String name = &quot;Sunny&quot;;String d">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/5231076-427ae3543d494163.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+  
+    <link rel="icon" href="/logo.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Sunny&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Sunny&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Android技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Sunny" target="_blank" href="//www.sunny8519.top">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Sunny8519">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5492265182/home?wvr=5">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-String类和StringBuilder类简单分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      String类和StringBuilder类简单分析
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Java基础/">Java基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-06-25
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p><img src="https://upload-images.jianshu.io/upload_images/5231076-427ae3543d494163.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<h3 id="一-String类简单分析"><a href="#一-String类简单分析" class="headerlink" title="一.String类简单分析"></a>一.String类简单分析</h3><h4 id="1-常用方法"><a href="#1-常用方法" class="headerlink" title="1.常用方法"></a>1.常用方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//支持+和+=运算符</span></span><br><span class="line">String name = <span class="string">"Sunny"</span>;</span><br><span class="line">String des = <span class="string">",今天去哪儿"</span>;</span><br><span class="line">name += <span class="string">",你好"</span>;</span><br><span class="line">System.out.println(name + des);<span class="comment">//输出：Sunny,你好,今天去哪儿</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**判断字符串是否为空</span></span><br><span class="line"><span class="comment">* 这个方法只能判断字符串为空字符串的情况，也就是字符串的length为0,</span></span><br><span class="line"><span class="comment">* 和TextUtils.isEmpty()方法差别在于，TextUtils.isEmpty()方法能够</span></span><br><span class="line"><span class="comment">* 判断字符串对象是否为null</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取字符串长度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//截取字符串，返回的是一个新的字符串对象</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex,<span class="keyword">int</span> endIndex)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在字符串中检索指定字符串的位置,返回第一次出现的位置索引，如果没有返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str)</span></span>;</span><br><span class="line"><span class="comment">//从指定位置开始查找，返回第一次出现的位置索引，如果没有返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str,<span class="keyword">int</span> fromIndex)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断字符串中是否包含有指定字符串或字符</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(CharSequence s)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断字符串是否以指定字符串开头</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">startsWith</span><span class="params">(String prefix)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断字符串是否以指定字符串结尾</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">endsWith</span><span class="params">(String suffix)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//比较两个字符串是否相同</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object anObject)</span></span>;</span><br><span class="line"><span class="comment">//忽略大小写比较两个字符串是否相同</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equalsIgnoreCase</span><span class="params">(String anotherString)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//比较两个字符串的大小</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(String anotherString)</span></span>;</span><br><span class="line"><span class="comment">//忽略大小写比较两个字符串的大小</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareToIngnoreCase</span><span class="params">(String str)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//所有字符串转为大写字符,返回新字符串，原字符串不变</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toUpperCase</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//所有字符串转为小写字符,返回新字符串，原字符串不变</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toLowerCase</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串连接,返回合并后的字符串，原来的字符串不变</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concat</span><span class="params">(String str)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//替换单个字符，返回新的字符串，原字符串不变</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replace</span><span class="params">(<span class="keyword">char</span> oldChar,<span class="keyword">char</span> newChar)</span></span>;</span><br><span class="line"><span class="comment">//替换字符序列，返回新的字符串，原字符串不变</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replace</span><span class="params">(CharSequence target,CharSequence replacement)</span></span>;</span><br><span class="line"><span class="comment">//替换第一个跟正则表达式匹配的子字符串，正则表达式可以是指定的字符串</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceFirst</span><span class="params">(String regex, String replacement)</span></span>;</span><br><span class="line"><span class="comment">//替换所有跟正则表达式匹配的子字符串，正则表达式可以是指定的字符串</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceAll</span><span class="params">(String regex, String replacement)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除开头和结尾的空格，返回新的字符串，原字符串不变</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">trim</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//分隔字符串,返回分隔后的字符串数组，原字符串不变</span></span><br><span class="line"><span class="keyword">public</span> String[] split(String regex);</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回指定索引的char</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br><span class="line"><span class="comment">//返回字符串对应的字符数组</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">char</span>[] toCharArray();</span><br><span class="line"></span><br><span class="line"><span class="comment">//将当前字符串中指定范围的字符插入到目标字符数组的指定位置</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">int</span> srcBegin,<span class="keyword">int</span> srcEnd,<span class="keyword">char</span> dst[],<span class="keyword">int</span> dstBegin)</span></span>;</span><br></pre></td></tr></table></figure>
+<h4 id="2-编码转化"><a href="#2-编码转化" class="headerlink" title="2.编码转化"></a>2.编码转化</h4><p>在Java中使用Charset类表示各种编码，String内部是按照UTF-16BE编码来处理字符的，但String类中也提供了很多方法让字符串按照指定的编码来表示。</p>
+<h4 id="3-Java中的正则表达式"><a href="#3-Java中的正则表达式" class="headerlink" title="3.Java中的正则表达式"></a>3.Java中的正则表达式</h4><p>Java中有专门的类如Pattern和Matcher用于正则表达式。</p>
+<h3 id="二-StringBuilder原理简单分析"><a href="#二-StringBuilder原理简单分析" class="headerlink" title="二.StringBuilder原理简单分析"></a>二.StringBuilder原理简单分析</h3><h4 id="1-StringBuilder和StringBuffer的区别"><a href="#1-StringBuilder和StringBuffer的区别" class="headerlink" title="1.StringBuilder和StringBuffer的区别"></a>1.StringBuilder和StringBuffer的区别</h4><p>这两者最大的区别是StringBuilder是线程不安全的，而StringBuffer是线程安全的。</p>
+<h4 id="2-StringBuilder的append原理分析"><a href="#2-StringBuilder的append原理分析" class="headerlink" title="2.StringBuilder的append原理分析"></a>2.StringBuilder的append原理分析</h4><p>StringBuilder继承自抽象类AbstractStringBuilder，初始化时都会走AbstractStringBuilder中的构造方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuilder</span> <span class="keyword">extends</span> <span class="title">AbstractStringBuilder</span> <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">CharSequence</span></span>&#123;</span><br><span class="line">       </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StringBuilder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(<span class="number">16</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StringBuilder</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(capacity);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StringBuilder</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(str.length() + <span class="number">16</span>);</span><br><span class="line">        append(str);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StringBuilder</span><span class="params">(CharSequence seq)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(seq.length() + <span class="number">16</span>);</span><br><span class="line">        append(seq);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>那我们再来看看AbstractStringBuilder中的构造方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractStringBuilder</span> <span class="keyword">implements</span> <span class="title">Appendable</span>, <span class="title">CharSequence</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] value;</span><br><span class="line">    <span class="keyword">int</span> count;</span><br><span class="line"></span><br><span class="line">    AbstractStringBuilder() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    AbstractStringBuilder(<span class="keyword">int</span> capacity) &#123;</span><br><span class="line">        value = <span class="keyword">new</span> <span class="keyword">char</span>[capacity];</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过上面的代码我们知道利用无参构造方法new一个StringBuilder对象的时候：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder text = <span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure></p>
+<p>实际存储字符的数组默认大小为16，当然了，我们也可以利用其他构造方法来新建一个对象，接下来我们再来说一个比较典型的构造方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">StringBuilder</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>(str.length() + <span class="number">16</span>);</span><br><span class="line">      append(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>举个栗子，我们的代码是这样写的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">     StringBuilder text = <span class="keyword">new</span> StringBuilder(<span class="string">"sunny"</span>);</span><br><span class="line">     text.append(<span class="string">",nihao"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从上面的代码中，我们知道<code>text</code>对象在new的过程中应该走的是带String类型参数的构造方法，进而再走到父类AbstractStringBuilder类中的<code>AbstractStringBuilder(int capacity)</code>构造方法，此时传给父类构造器的参数是<code>str.length()+16</code>大小的一个整数，在这个栗子中，整数capacity的值就是21，然后为<code>value</code>这个变量new了一个大小为21的char类型数组，<code>count</code>变量的值则是默认值0，这样父类AbstractStringBuilder的构造方法就走完了，然后继续走子类StringBuilder的构造方法，也就是<code>append(str)</code>这句，我们看看append方法的具体代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">append</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.append(str);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在该方法中我们可以看到实际又调到了父类AbstractStringBuilder类中的append方法，然后把当前对象返回，方便继续操作。我们进入父类AbstractStringBuilder的append方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> AbstractStringBuilder <span class="title">append</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> appendNull();<span class="comment">//如果是空，直接在已存在char数组的基础上加上"null"字符串</span></span><br><span class="line">    <span class="comment">//如果不是空，则获取字符串的长度len</span></span><br><span class="line">    <span class="keyword">int</span> len = str.length();</span><br><span class="line">    <span class="comment">//根据实际存储字符长度(这里的意思是value字符数组可能没有填满,count表示的是字符数组已经被使用的长度)和追加字符的长度对value字符数组进行扩容，最后的结果就是value数组的大小被扩大了，但是里面的内容没有变化</span></span><br><span class="line">    ensureCapacityInternal(count + len);</span><br><span class="line">    <span class="comment">//把追加的字符串整个copy到value数组中，注意是copy到count以后的位置，不然也不叫追加了</span></span><br><span class="line">    str.getChars(<span class="number">0</span>, len, value, count);</span><br><span class="line">    <span class="comment">//增加实际存储字符的大小</span></span><br><span class="line">    count += len;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>为什么在字符串频繁修改的情境下建议使用StringBuilder呢？最重要的一个原因就在于内存的分配次数上，<strong>String在每次修改字符串的时候内部都会重新new一个char数组来存放最新更改的字符串，而StringBuilder只有在需要扩容的时候才会重新new一个char数组，而且StringBuilder内对char数组长度的扩展采用的是指数扩展策略，能够有效的减小内存分配的次数</strong>，我们来看一看StringBuilder如何进行的指数扩展：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ensureCapacityInternal</span><span class="params">(<span class="keyword">int</span> minimumCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="comment">//如果数组已被使用的长度加上追加的字符串的长度大于当前数组的最大长度就需要扩容</span></span><br><span class="line">        <span class="keyword">if</span> (minimumCapacity - value.length &gt; <span class="number">0</span>)</span><br><span class="line">            expandCapacity(minimumCapacity);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">expandCapacity</span><span class="params">(<span class="keyword">int</span> minimumCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//新数组的长度是在原来数组长度的基础上乘以2再加2</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = value.length * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//如果发现新数组的长度还是小于原来字符串加上追加进来的字符串总长度，就让新数组的长度等于原字符串和追加的字符串总长度</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minimumCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minimumCapacity;</span><br><span class="line">        <span class="comment">//如果发现新数组的长度小于0了，就可以断定新数组的长度已经大于int的最大值，因为超过int的最大值就变成负值</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//这个时候再判断原字符串和追加的字符串总长度是否小于0，如果小于0，则说明追加的字符串导致字符串占用的内存大小超过了int的最大值，这是一个内存溢出的异常</span></span><br><span class="line">            <span class="keyword">if</span> (minimumCapacity &lt; <span class="number">0</span>) <span class="comment">// overflow</span></span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> OutOfMemoryError();</span><br><span class="line">            <span class="comment">//如果原字符串和追加的字符串总长度大于0，那么就把新数组的长度设置成int的最大值</span></span><br><span class="line">            newCapacity = Integer.MAX_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//重新分配一个newCapacity长度的字符数组，并把原来数组中的值copy到新数组中</span></span><br><span class="line">        value = Arrays.copyOf(value, newCapacity);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>走完上面两个方法说明StringBuilder内的数组扩容已经完成了，接下来就需要把传进来的字符串添加到新数组就行了，也就是<code>str.getChars(0, len, value, count);</code>这一步。到这里，一次完整的append就完成了。</p>
+<p>当然了，虽然StringBuilder中为我们提供了指数扩容的策略来减少内存分配的次数，但如果我们事先知道这个字符串的长度，可以使用StringBuilder的另一个构造方法直接设置内部存放字符的数组长度：<code>public StringBuilder(int capacity)</code></p>
+<p>StringBuilder中append()方法有多种重载形式，内部实现原理基本差不多，这里不再赘述。</p>
+<h4 id="3-StringBuilder的insert原理分析"><a href="#3-StringBuilder的insert原理分析" class="headerlink" title="3.StringBuilder的insert原理分析"></a>3.StringBuilder的insert原理分析</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuilde <span class="title">insert</span><span class="params">(<span class="keyword">int</span> offset,String str)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>该方法的作用就是在指定索引位置offset插入指定的字符串str，比如下面这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">sb.append(<span class="string">"Sunny"</span>);</span><br><span class="line">sb.insert(<span class="number">5</span>,<span class="string">"，hello"</span>);</span><br><span class="line"></span><br><span class="line">打印结果：Sunny,hello</span><br></pre></td></tr></table></figure></p>
+<p>我们来看一看insert的源码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//StringBuilder类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">insert</span><span class="params">(<span class="keyword">int</span> offset, String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.insert(offset, str);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//AbstractStringBuilder类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> AbstractStringBuilder <span class="title">insert</span><span class="params">(<span class="keyword">int</span> offset, String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ((offset &lt; <span class="number">0</span>) || (offset &gt; length()))</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(offset);</span><br><span class="line">        <span class="keyword">if</span> (str == <span class="keyword">null</span>)</span><br><span class="line">            str = <span class="string">"null"</span>;</span><br><span class="line">        <span class="keyword">int</span> len = str.length();</span><br><span class="line">        <span class="comment">//和append相同先判断是否需要扩容</span></span><br><span class="line">        ensureCapacityInternal(count + len);</span><br><span class="line">        <span class="comment">//调用System.arraycopy方法将内部字符数组指定索引位置往后的字符移到插入的字符后面，中间空出来的地方留给插入的字符使用</span></span><br><span class="line">        System.arraycopy(value, offset, value, offset + len, count - offset);</span><br><span class="line">        <span class="comment">//把插入的字符串copy到内部字符数组offset的位置，也就是中间空出来的空间</span></span><br><span class="line">        str.getCharsNoCheck(<span class="number">0</span>, len, value, offset);</span><br><span class="line">        <span class="comment">//字符数组已使用的空间加上插入的字符串长度</span></span><br><span class="line">        count += len;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里要说明一下<code>System.arraycopy()</code>这个方法,它可以在同一个数组中对元素进行移位操作。</p>
+<p>当然这里insert方法也有多种重载形式，实现原理也比较好理解，这里不再赘述。</p>
+<h4 id="4-StringBuilder的delete原理"><a href="#4-StringBuilder的delete原理" class="headerlink" title="4.StringBuilder的delete原理"></a>4.StringBuilder的delete原理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不包括end位置的字符</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">delete</span><span class="params">(<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>;</span><br><span class="line"><span class="comment">//删除指定位置的字符</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">deleteCharAt</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>内部实现原理：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">delete</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.delete(start, end);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> AbstractStringBuilder <span class="title">delete</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(start);</span><br><span class="line">        <span class="keyword">if</span> (end &gt; count)</span><br><span class="line">            end = count;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException();</span><br><span class="line">        <span class="keyword">int</span> len = end - start;</span><br><span class="line">        <span class="keyword">if</span> (len &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//把end到数组结尾的字符copy到start位置，那么中间从start到end的字符就没有了</span></span><br><span class="line">            System.arraycopy(value, start+len, value, start, count-end);</span><br><span class="line">            <span class="comment">//已使用的字符数组长度要减去删除的字符长度</span></span><br><span class="line">            count -= len;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">deleteCharAt</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.deleteCharAt(index);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> AbstractStringBuilder <span class="title">deleteCharAt</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ((index &lt; <span class="number">0</span>) || (index &gt;= count))</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(index);</span><br><span class="line">        <span class="comment">//把要删除的字符后面的字符copy到要删除的字符的位置，这样指定位置的字符就被覆盖删除了</span></span><br><span class="line">        System.arraycopy(value, index+<span class="number">1</span>, value, index, count-index-<span class="number">1</span>);</span><br><span class="line">        count--;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>从上面的源码来看，delete()方法的实现也是非常简单，不再做过多描述。</p>
+<h4 id="5-StringBuilder的replace原理"><a href="#5-StringBuilder的replace原理" class="headerlink" title="5.StringBuilder的replace原理"></a>5.StringBuilder的replace原理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//替换指定范围内的字符串，如果end-start大于str的字符串长度，end-start范围内的字符都会被str替代</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">replace</span><span class="params">(<span class="keyword">int</span> start,<span class="keyword">int</span> end,String str)</span></span>;</span><br><span class="line"><span class="comment">//替换指定位置的字符</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCharAt</span><span class="params">(<span class="keyword">int</span> index,<span class="keyword">char</span> ch)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>内部实现原理：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">replace</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end, String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.replace(start, end, str);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> AbstractStringBuilder <span class="title">replace</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end, String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(start);</span><br><span class="line">        <span class="keyword">if</span> (start &gt; count)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(<span class="string">"start &gt; length()"</span>);</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(<span class="string">"start &gt; end"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (end &gt; count)</span><br><span class="line">            end = count;</span><br><span class="line">        <span class="keyword">int</span> len = str.length();</span><br><span class="line">        <span class="keyword">int</span> newCount = count + len - (end - start);</span><br><span class="line">        ensureCapacityInternal(newCount);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//把end位置往后的所有字符copy到start+len的位置，中间(start,start+len)留给str使用</span></span><br><span class="line">        System.arraycopy(value, end, value, start + len, count - end);</span><br><span class="line">        <span class="comment">//把str copy到value数组中</span></span><br><span class="line">        str.getCharsNoCheck(<span class="number">0</span>, len, value, start);</span><br><span class="line">        <span class="comment">//更新已使用的字符个数</span></span><br><span class="line">        count = newCount;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//AbstractStringBuilder</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCharAt</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">char</span> ch)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ((index &lt; <span class="number">0</span>) || (index &gt;= count))</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(index);</span><br><span class="line">        value[index] = ch;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="6-StringBuilder的reverse-方法"><a href="#6-StringBuilder的reverse-方法" class="headerlink" title="6.StringBuilder的reverse()方法"></a>6.StringBuilder的reverse()方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">reverse</span><span class="params">()</span>；</span></span><br></pre></td></tr></table></figure>
+<p>reverse()方法对于增补字符的翻转依然有效，有时间可研究字符翻转方面的算法实现。</p>
+<h4 id="7-其余常用方法"><a href="#7-其余常用方法" class="headerlink" title="7.其余常用方法"></a>7.其余常用方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//返回字符数组的长度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">capacity</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回字符数组实际使用的长度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接修改实际使用的长度,如果newLength的大小大于count，那么中间位置的字符用'\0'表示</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLength</span><span class="params">(<span class="keyword">int</span> newLength)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//缩小StringBuilder内部数组占用的内存空间</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">trimToSize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (count &lt; value.length) &#123;</span><br><span class="line">            <span class="comment">//内部重新new一个字符数组，长度为count，并把value数组中的内容copy到新数组中</span></span><br><span class="line">            value = Arrays.copyOf(value, count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-与String类似的方法"><a href="#8-与String类似的方法" class="headerlink" title="8.与String类似的方法"></a>8.与String类似的方法</h4><p>1.查询指定字符串<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(String str, <span class="keyword">int</span> fromIndex)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lastIndexOf</span><span class="params">(String str)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lastIndexOf</span><span class="params">(String str, <span class="keyword">int</span> fromIndex)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>2.取子字符串<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> start)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> CharSequence <span class="title">subSequence</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>3.获取其中的字符或Code Point<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">codePointAt</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">codePointBefore</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">codePointCount</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getChars</span><span class="params">(<span class="keyword">int</span> srcBegin, <span class="keyword">int</span> srcEnd, <span class="keyword">char</span>[] dst, <span class="keyword">int</span> dstBegin)</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="9-String的-和-背后原理"><a href="#9-String的-和-背后原理" class="headerlink" title="9.String的+和+=背后原理"></a>9.String的+和+=背后原理</h4><p>在Java中，我们都知道对于String能够使用+和+=，其实背后的原理和包装类的自动装箱/拆箱很相似，都是编译器提供的功能，当我们写下下面这段代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = <span class="string">"Sunny"</span>;</span><br><span class="line">name += <span class="string">",hello"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>经过编译器变异过后，代码会变成如下这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String name = <span class="string">"Sunny"</span></span><br><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(name);</span><br><span class="line">sb.append(<span class="string">",hello"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>那么这时候就会有同学问了，既然有了+和+=,干嘛还要使用StringBuilder呢，直接都让编译器隐式的去翻译成StringBuilder不就行了嘛，我们来看个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String name = <span class="string">"Sunny"</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">   name += <span class="string">",hello"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样写会有什么样的性能问题？我们来把它翻译成StringBuilder的形式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String name = <span class="string">"Sunny"</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">   StringBuilder sb = <span class="keyword">new</span> StringBuilder(name);</span><br><span class="line">   sb.append(<span class="string">",hello"</span>);</span><br><span class="line">   name = sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>很明显了，这里每个循环都需要new一个StringBuilder对象，循环次数多了会造成内存抖动，所以这种情况下应该在循环外面使用一个StringBuilder，在循环内部append就行了。</p>
+<h3 id="三-参考"><a href="#三-参考" class="headerlink" title="三.参考"></a>三.参考</h3><p><a href="http://mp.weixin.qq.com/s/4FhhAp8CJobMzXBuWhB1zg" target="_blank" rel="noopener">剖析String</a><br><a href="http://mp.weixin.qq.com/s/RU7nzqP3L7Zud5O26synTg" target="_blank" rel="noopener">剖析StringBuilder</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年04月21日 10:19</p>
+        <p>原始链接： <a class="post-url" href="/2017/06/25/String类和StringBuilder类简单分析/" title="String类和StringBuilder类简单分析">http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/</a></p>
+        <footer>
+            <a href="http://www.sunny8519.top">
+                <img src="/images/logo.png" alt="Sunny">
+                Sunny
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/&title=《String类和StringBuilder类简单分析》 — Sunny's Blog&pic=https://upload-images.jianshu.io/upload_images/5231076-427ae3543d494163.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/&title=《String类和StringBuilder类简单分析》 — Sunny's Blog&source=Android技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《String类和StringBuilder类简单分析》 — Sunny's Blog&url=http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/&via=http://www.sunny8519.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.sunny8519.top/2017/06/25/String类和StringBuilder类简单分析/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Java基础/" class="color2">Java基础</a>
+      
+    <a href="/tags/String类/" class="color3">String类</a>
+      
+    <a href="/tags/StringBuilder类/" class="color5">StringBuilder类</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-String类简单分析"><span class="post-toc-text">一.String类简单分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-常用方法"><span class="post-toc-text">1.常用方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-编码转化"><span class="post-toc-text">2.编码转化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-Java中的正则表达式"><span class="post-toc-text">3.Java中的正则表达式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-StringBuilder原理简单分析"><span class="post-toc-text">二.StringBuilder原理简单分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-StringBuilder和StringBuffer的区别"><span class="post-toc-text">1.StringBuilder和StringBuffer的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-StringBuilder的append原理分析"><span class="post-toc-text">2.StringBuilder的append原理分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-StringBuilder的insert原理分析"><span class="post-toc-text">3.StringBuilder的insert原理分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-StringBuilder的delete原理"><span class="post-toc-text">4.StringBuilder的delete原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-StringBuilder的replace原理"><span class="post-toc-text">5.StringBuilder的replace原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-StringBuilder的reverse-方法"><span class="post-toc-text">6.StringBuilder的reverse()方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-其余常用方法"><span class="post-toc-text">7.其余常用方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-与String类似的方法"><span class="post-toc-text">8.与String类似的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#9-String的-和-背后原理"><span class="post-toc-text">9.String的+和+=背后原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-参考"><span class="post-toc-text">三.参考</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/07/02/ArrayList浅析/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          ArrayList浅析
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/06/18/Java深拷贝和浅拷贝浅析/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Java深拷贝和浅拷贝浅析</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Sunny<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://www.sunny8519.top",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/AutoCompleteTextView/">AutoCompleteTextView</a><a class="category-link" href="/categories/Hexo/">Hexo</a><a class="category-link" href="/categories/Java基础/">Java基础</a><a class="category-link" href="/categories/android/">android</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

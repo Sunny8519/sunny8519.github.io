@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Java异常 | Sunny&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Android技术博客,Android,个人博客">
+  
+  <meta name="description" content="一.异常的分类Java中的异常基类为Throwable，Error和Exception都继承自Throwable。 Error是指系统错误或者资源耗尽，通常这些Error都是来自虚拟机，比较常见的Error有内存溢出错误(OutOfMemoryError)，栈溢出错误(StackOverflowError)。 Exception是指代码异常，如果代码中抛出了这种异常就说明应用程序有问题。它分为Ru">
+<meta name="keywords" content="基础,Java异常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java异常">
+<meta property="og:url" content="http://www.sunny8519.top/2018/01/20/Java异常/index.html">
+<meta property="og:site_name" content="Sunny&#39;s Blog">
+<meta property="og:description" content="一.异常的分类Java中的异常基类为Throwable，Error和Exception都继承自Throwable。 Error是指系统错误或者资源耗尽，通常这些Error都是来自虚拟机，比较常见的Error有内存溢出错误(OutOfMemoryError)，栈溢出错误(StackOverflowError)。 Exception是指代码异常，如果代码中抛出了这种异常就说明应用程序有问题。它分为Ru">
+<meta property="og:locale" content="CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5231076-382f3d5351c2e6a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-04-21T02:19:17.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java异常">
+<meta name="twitter:description" content="一.异常的分类Java中的异常基类为Throwable，Error和Exception都继承自Throwable。 Error是指系统错误或者资源耗尽，通常这些Error都是来自虚拟机，比较常见的Error有内存溢出错误(OutOfMemoryError)，栈溢出错误(StackOverflowError)。 Exception是指代码异常，如果代码中抛出了这种异常就说明应用程序有问题。它分为Ru">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5231076-382f3d5351c2e6a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+  
+    <link rel="icon" href="/logo.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Sunny&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Sunny&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Android技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Sunny" target="_blank" href="//www.sunny8519.top">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Sunny8519">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5492265182/home?wvr=5">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Java异常" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Java异常
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Java基础/">Java基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-01-20
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h4 id="一-异常的分类"><a href="#一-异常的分类" class="headerlink" title="一.异常的分类"></a>一.异常的分类</h4><p>Java中的异常基类为Throwable，Error和Exception都继承自Throwable。</p>
+<p>Error是指系统错误或者资源耗尽，通常这些Error都是来自虚拟机，比较常见的Error有内存溢出错误(OutOfMemoryError)，栈溢出错误(StackOverflowError)。</p>
+<p>Exception是指代码异常，如果代码中抛出了这种异常就说明应用程序有问题。它分为RunTimeException和CheckTimeException，RunTimeException叫做<strong>运行时异常</strong>，又叫做未受检异常，unchecked exception，这种异常通常是在应用程序运行的过程中发生的，比如最常见的NullPointerException、IllegalArgumentException等等。CheckTimeException叫做<strong>编译时异常</strong>，又叫做受检异常，checked exception，顾名思义，这种异常如果我们不进行人为捕获处理的话，编译器是不会通过的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/5231076-382f3d5351c2e6a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Throwable.png"></p>
+<h4 id="二-异常处理机制"><a href="#二-异常处理机制" class="headerlink" title="二.异常处理机制"></a>二.异常处理机制</h4><ul>
+<li>当异常出现时，系统会new一个Throwable对象抛出；</li>
+<li>当前应用程序会中止运行；</li>
+<li>系统开始寻找异常处理程序，也就是catch语句中的代码，当前方法中没有符合的会由里向外不断向上层调用方法抛，直至主函数，如果有对应的异常处理程序，经过异常处理之后当前应用程序可能会换一种方式运行或者继续执行下去（这取决于软件开发者），如果没有对应的异常处理程序，系统会启动默认异常处理，即在控制台打印出异常信息并且程序退出。</li>
+</ul>
+<h4 id="三-使用throw抛出异常"><a href="#三-使用throw抛出异常" class="headerlink" title="三.使用throw抛出异常"></a>三.使用throw抛出异常</h4><p>throw总是在方法体中出现，一般都是对某个不符合预期的并且会影响到程序正常运行的条件使用throw抛出对应的异常，让调用者明确程序中出现的问题；或者还有一种情况就是当前方法体中对于这种异常处理不了，需要抛出到上层方法中去处理。</p>
+<p>比如方法中传入一个参数，要求：这个参数的值不能大于5，否则会导致程序运行不正常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> <span class="keyword">var</span>)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">var</span> &lt; <span class="number">5</span>)&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Argument must less than 5"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="四-使用throws抛出异常"><a href="#四-使用throws抛出异常" class="headerlink" title="四.使用throws抛出异常"></a>四.使用throws抛出异常</h4><p>使用throws抛出异常一般是当前方法没有处理这种异常的能力，需要由调用者方法去处理异常。</p>
+<p>用法：在方法声明处使用throws抛出方法中可能出现的异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> <span class="keyword">throws</span> Exception1,Exception2...</span>&#123;</span><br><span class="line">  <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：方法中是不允许抛出未处理的受检异常的，这里的未处理包括两方面：1.在方法声明中用throws抛出；2.使用try/catch进行处理。比如父类中声明了IOException，子类在覆写这个方法的时候抛出了SQLException，这是不允许的，因此，这就要求父类应该尽可能的声明所有可能出现的异常。方法中抛出RunTimeException是不需要声明的。</p>
+<h4 id="五-捕获异常"><a href="#五-捕获异常" class="headerlink" title="五.捕获异常"></a>五.捕获异常</h4><p>语法形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">  &#125;<span class="keyword">catch</span>(Exception1 e)&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">  &#125;<span class="keyword">catch</span>(Exception2 e)&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">  &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>try块中是可能出现异常的代码，catch块中的是对相应异常的异常处理代码，finally块正如字面意义那样指最后执行的一段代码，大多数情况下finally块中的代码都会执行到，除非出现下面几种情况：</p>
+<ul>
+<li>finally块前面的代码中出现<code>System.exit()</code>致使程序退出了；</li>
+<li>当前代码所在的线程死亡；</li>
+</ul>
+<p><strong>异常的重新抛出</strong></p>
+<p>有时我们在收到某个异常之后，发现我们并没有能力去处理这个异常，那么我们就需要把这个异常重新抛出，交由调用者去处理。或者还有一种情况是获取到的异常信息较少，我们希望在异常中加入更具体的描述信息，也会重新抛出异常。</p>
+<h4 id="六-finally"><a href="#六-finally" class="headerlink" title="六.finally"></a>六.finally</h4><p>前面我们提过几种情况下会导致finally中的代码不会被执行到，但是这些情况很少遇到，我们可以这样认为不管是否有异常，finally中的代码都会执行，但是有几点是我们容易忽略的：</p>
+<ul>
+<li><p>在try/catch/finally语法中，catch和finally都不是必须的，可以是try/catch，也可以是try/finally；</p>
+</li>
+<li><p>如果在try或者catch块中出现return语句，finally中的代码会在return语句执行前执行，但是有一点需要注意的是finally中的代码是不会影响return返回的结果的，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       a = <span class="number">3</span>;</span><br><span class="line">       b = <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">返回结果：</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>上面方法返回的结果是3而不是7，这是因为<code>a+b</code>的结果在return语句执行之前用临时变量保存起来了，当finally代码执行完之后，return会把临时变量的值返回。</p>
+</li>
+<li><p>如果try或者catch块中有return语句，并且finally代码块中也有return语句，那么finally中的return会覆盖try或者catch块中的return，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">  &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">4</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">返回结果：</span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果try或者catch块中抛出了异常，并且finally中有return语句，这个return语句会覆盖这些异常，使得上层代码接收不到底层抛出的异常；</p>
+</li>
+<li><p>如果try或者catch块中抛出了异常，并且finally中也抛出了异常，那么finally中的异常会覆盖try或者catch块中异常，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"illegalArgument exception"</span>);</span><br><span class="line">  &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"null exception"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这种写法在上层代码中只会接收到空指针异常，不合法异常被空指针异常覆盖。</p>
+</li>
+</ul>
+<h4 id="七-什么是异常链"><a href="#七-什么是异常链" class="headerlink" title="七.什么是异常链"></a>七.什么是异常链</h4><p>当程序抛出异常时，我们希望在接受到这个异常后重新抛出一个新的异常，并且原来的异常信息保留，通常Throwable的子类都会提供Throwable类型参数的构造方法，方便存储上一个异常信息，这样一层接着一层就构成了异常链。</p>
+<h4 id="八-自定义异常"><a href="#八-自定义异常" class="headerlink" title="八.自定义异常"></a>八.自定义异常</h4><p>自定义异常需要继承Exception类，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> String mImportantMessage;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">CustomException</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">CustomException</span><span class="params">(String exceptionMessage)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(exceptionMessage);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">CustomException</span><span class="params">(Throwable cause)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(cause);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">CustomException</span><span class="params">(String exceptionMessage,Throwable cause)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(exceptionMessage,cause);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="九-关于异常常见的几个问题"><a href="#九-关于异常常见的几个问题" class="headerlink" title="九.关于异常常见的几个问题"></a>九.关于异常常见的几个问题</h4><p>1.什么是异常？异常的分类有哪些？</p>
+<p>异常是指阻碍程序正常执行的错误，分类有Error和Exception，Error一般指系统错误（通常由虚拟机抛出）或资源耗尽，通常是由系统使用，应用程序不应抛出和处理，一般Error有内存溢出错误和栈溢出错误等。Exception又分为运行时异常(RunTimeException)和检查型异常(CheckTimeException)。</p>
+<p>2.Error和Exception的区别？</p>
+<p>Error一般指系统抛出的错误或资源耗尽，通常都是虚拟机抛出；Exception指代码异常，也就是说程序中抛出了这种异常说明我们的代码出现了问题，Exception又分为运行时异常和检查型异常，运行时异常是在程序执行过程中抛出的异常，检查型异常是编译时就要求开发者针对异常进行处理的异常，换句话说就是这些异常是可预知的，我们知道这块代码可能会出现这样的问题，然后我们可以针对这些问题要一些纠正性的操作。</p>
+<p>3.常见运行时异常(RunTimeException)和检查型异常(CheckTimeException)有哪些？</p>
+<p>运行时异常：NullPointerException(空指针异常)，ArrayIndexOutOfBoundsException(数组索引越界异常)，IllegalArgumentException(非法参数异常)等等；</p>
+<p>检查型异常：IOException(IO类的异常)，NumberFormatException(字符串转换为数字抛出的异常)等等。</p>
+<p>4.异常的机制（异常的处理流程）？</p>
+<ul>
+<li>在代码出现异常时，系统会和new普通对象一样，在Java堆内存空间中中生成一个Throwable对象；</li>
+<li>当前出现异常的代码停止执行，系统会寻找匹配的异常处理程序，当前方法体中如果没有匹配的则抛向上层代码直至主函数，如果到主函数都没有相应的异常处理代码，系统就会启用默认的异常处理，即打印异常信息到控制台并退出程序，一般在实际应用中会有专门的日志记录打印的异常信息。异常处理程序的目的是纠正出现异常的代码或者说对异常代码产生的后果做下一步操作以让程序能够继续执行下去或者换一种方式执行。</li>
+</ul>
+<p>5.怎么自定义异常？</p>
+<p>自定义异常一般需要继承Exception类，然后提供三类构造方法。</p>
+<p>6.Java异常类有哪些重要的方法？</p>
+<p>Java异常类Exception及其子类提供的方法调用很有限，通常都是调用Throwable类中的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取异常详细信息</span></span><br><span class="line"><span class="function">String <span class="title">getMessage</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取cause对象</span></span><br><span class="line"><span class="function">Throwable <span class="title">getCause</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取用本地语言描述的详细信息，其实在Throwable的内部该方法调用的是getMessage()</span></span><br><span class="line"><span class="function">String <span class="title">getLocalizedMessage</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回对Throwable的简单描述，如果有异常的详细信息也会一同返回</span></span><br><span class="line"><span class="function">String <span class="title">toString</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印Throwable的调用栈轨迹</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStackTrace</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印异常信息到指定的流</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStackTrace</span><span class="params">(PrintStream s)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printStackTrace</span><span class="params">(PrintWriter s)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取异常栈每一层的信息，StackTraceElement包括文件名，类名，方法名以及行号等信息</span></span><br><span class="line">StackTraceElement[] getStackTrace();</span><br></pre></td></tr></table></figure>
+<h4 id="十-参考"><a href="#十-参考" class="headerlink" title="十.参考"></a>十.参考</h4><p><a href="http://mp.weixin.qq.com/s/SB5d0IU7aj-hRSneg3hE9g" target="_blank" rel="noopener">异常上</a></p>
+<p><a href="http://mp.weixin.qq.com/s/8XiwZGn8djtO7TvtonAe8w" target="_blank" rel="noopener">异常下</a></p>
+<p><a href="https://mp.weixin.qq.com/s/q0jsOrBSNezGIBOzozlQzA" target="_blank" rel="noopener">Java基础夯实2：全面了解异常</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年04月21日 10:19</p>
+        <p>原始链接： <a class="post-url" href="/2018/01/20/Java异常/" title="Java异常">http://www.sunny8519.top/2018/01/20/Java异常/</a></p>
+        <footer>
+            <a href="http://www.sunny8519.top">
+                <img src="/images/logo.png" alt="Sunny">
+                Sunny
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.sunny8519.top/2018/01/20/Java异常/&title=《Java异常》 — Sunny's Blog&pic=http://upload-images.jianshu.io/upload_images/5231076-382f3d5351c2e6a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.sunny8519.top/2018/01/20/Java异常/&title=《Java异常》 — Sunny's Blog&source=Android技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.sunny8519.top/2018/01/20/Java异常/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java异常》 — Sunny's Blog&url=http://www.sunny8519.top/2018/01/20/Java异常/&via=http://www.sunny8519.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.sunny8519.top/2018/01/20/Java异常/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.sunny8519.top/2018/01/20/Java异常/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/Java异常/" class="color2">Java异常</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一-异常的分类"><span class="post-toc-text">一.异常的分类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二-异常处理机制"><span class="post-toc-text">二.异常处理机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三-使用throw抛出异常"><span class="post-toc-text">三.使用throw抛出异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四-使用throws抛出异常"><span class="post-toc-text">四.使用throws抛出异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#五-捕获异常"><span class="post-toc-text">五.捕获异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#六-finally"><span class="post-toc-text">六.finally</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#七-什么是异常链"><span class="post-toc-text">七.什么是异常链</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#八-自定义异常"><span class="post-toc-text">八.自定义异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#九-关于异常常见的几个问题"><span class="post-toc-text">九.关于异常常见的几个问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#十-参考"><span class="post-toc-text">十.参考</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/01/23/Java包装类总结(上)/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Java包装类总结（上）
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/01/17/AutoCompleteTextView和MultiAutoCompleteTextView的简单用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">AutoCompleteTextView和MultiAutoCompleteTextView的简单用法</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Sunny<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://www.sunny8519.top",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/AutoCompleteTextView/">AutoCompleteTextView</a><a class="category-link" href="/categories/Hexo/">Hexo</a><a class="category-link" href="/categories/Java基础/">Java基础</a><a class="category-link" href="/categories/android/">android</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/ArrayList源码/" style="font-size: 10px;">ArrayList源码</a> <a href="/tags/AutoCompleteTextView/" style="font-size: 10px;">AutoCompleteTextView</a> <a href="/tags/Bitmap/" style="font-size: 10px;">Bitmap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java基础/" style="font-size: 20px;">Java基础</a> <a href="/tags/Java异常/" style="font-size: 10px;">Java异常</a> <a href="/tags/Java继承/" style="font-size: 10px;">Java继承</a> <a href="/tags/StringBuilder类/" style="font-size: 10px;">StringBuilder类</a> <a href="/tags/String类/" style="font-size: 10px;">String类</a> <a href="/tags/UML/" style="font-size: 10px;">UML</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/包装类/" style="font-size: 10px;">包装类</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
